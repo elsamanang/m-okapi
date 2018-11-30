@@ -13,5 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <p>
             <em>Votre gestionnaire de budget optimisé</em>
         </p>
+        <a href="<?php echo site_url('utilisateur/form_inscription');?>">Inscrption</a><br>
+        <a href="<?php echo site_url('utilisateur/form_authentification');?>">Connexion</a><br>
     </body>
 </html>
