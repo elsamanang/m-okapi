@@ -7,4 +7,10 @@ class UtilisateurModel extends CI_Model{
         $this->db->insert($this->table, $info);
 
     }
+    public function login($d){
+        $this->db->where($d);
+        $q = $this->db->get($this->table);
+        $res = $q->result();
+        return $res;
+    }
 }
