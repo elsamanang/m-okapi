@@ -90,7 +90,7 @@ class Utilisateur extends CI_Controller
         }
     }
     public function logout(){
-        session_destroy();
+        $this->session->unset_userdata('is_connected');
         redirect();
     }
 }
