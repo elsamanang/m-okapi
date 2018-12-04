@@ -5,6 +5,9 @@ class MOkapi extends CI_Controller
 {
     public function index()
     {
+        if($this->session->is_connected){
+            $this->load->view('utilisateur/acceuil');
+        }
         $this->load->view('mokapi_home.php');
     }
 }
