@@ -1,4 +1,4 @@
-<?php
+v<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Utilisateur extends CI_Controller
@@ -10,10 +10,9 @@ class Utilisateur extends CI_Controller
     }
     public function form_inscription()
     {
+        $this->load->view('header.php');
         $this->load->view('form_inscription.php');
-    }
-    public function form_authentification(){
-        $this->load->view('form_authentification.php');
+        $this->load->view('footer.php');
     }
     public function nouvel_utilisateur(){
         $nomcomplet = $this->input->post('nomcomplet');
@@ -37,7 +36,9 @@ class Utilisateur extends CI_Controller
         }
         else{
             echo "Mot de passe non identique";
+            $this->load->view('header.php');
             $this->load->view('form_inscription.php');
+            $this->load->view('footer.php');
         }
     }
     public function connexion(){
@@ -57,7 +58,9 @@ class Utilisateur extends CI_Controller
                 'is_connected' => true
             );
             $this->session->set_userdata($d);
+            $this->load->view('header.php');
             redirect('utilisateur/acceuil');
+            $this->load->view('footer.php');
             
         }
         else{
@@ -65,12 +68,16 @@ class Utilisateur extends CI_Controller
                 'erreur'=> 'login ou mot de passe incorrect'
             );
             $this->session->set_flashdata($error);
-            $this->load->view('form_authentification');
+            $this->load->view('header.php');
+            $this->load->view('mokapi_home.php');
+            $this->load->view('footer.php');
         }
     }
     public function acceuil(){
         if($this->session->is_connected){
+            $this->load->view('header.php');
             $this->load->view('utilisateur/acceuil');
+            $this->load->view('footer.php');
         }
         else{
             redirect();
