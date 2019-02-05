@@ -30,7 +30,7 @@
                                 <div>
                                     <div class="content-style-form content-style-form-4 ">
                                         <h2 class="morph-clone">Creation</h2>
-                                        <form method="post" action="<?php echo site_url('utilisateur/nouvel_utilisateur')?>">
+                                        <form method="post" action="<?php echo site_url('utilisateur/CreateAccountUser')?>">
                                             <p><label>Nom complet</label><input type="text" name="nomcomplet"></p>
                                             <p><label>Login</label><input type="text" name="login"/></p>
                                             <p><label>Mot de passe</label><input  type="password" name="mdp"/></p>
