@@ -31,9 +31,11 @@
                                 <div>
                                     <div class="content-style-form content-style-form-4 ">
                                         <h2 class="morph-clone">Connexion</h2>
-                                        <form method="post" action="<?php echo site_url('utilisateur/connexion')?>">
+                                        <form method="post" action="<?php echo site_url('utilisateur/LogInUser')?>">
                                             <p><label>Login</label><input type="text" name="login"/></p>
+                                            <?php echo form_error('login'); ?>
                                             <p><label>Mot de passe</label><input  type="password" name="mdp"/></p>
+                                            <?php echo form_error('mdp'); ?>
                                             <p style="color: red;"><?php
                                                 echo $this->session->erreur;
                                                 ?></p>
