@@ -77,7 +77,7 @@ class Utilisateur extends CI_Controller
         if($this->session->is_connected){
             $this->load->view('header.php');
             $this->load->view('utilisateur/acceuil');
-            $this->load->view('footer.php');
+            $this->load->view('footer.php'); 
         }
         else{
             redirect();
